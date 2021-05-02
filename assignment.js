@@ -10,3 +10,5 @@ let numBase = {
     8: "Eight",
     9: "Nine"
 }
+
+let testArray = new Array();
