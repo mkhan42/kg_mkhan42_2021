@@ -1,9 +1,9 @@
 const prompt = require('prompt-sync')();
-const response = prompt('Enter in n');
-console.log(response)
-// let numbers = [10,34,85]
+const response = prompt('Enter in a set of numbers: ');
 
-const numToString = (response) => {
+const numToString = (userInput) => {
+
+    let inputArray = userInput.split(" ")
     let numBase = {
         "0": "Zero",
         "1": "One",
@@ -19,8 +19,8 @@ const numToString = (response) => {
     
     let stringArr = []
     
-    array.forEach((element, i) => {
-        let stringNum = element.toString().split('')
+    inputArray.forEach((element, i) => {
+        let stringNum = element.split('')
         let numWord = ''
     
         stringNum.forEach((num) => {
@@ -29,15 +29,13 @@ const numToString = (response) => {
                     numWord = numWord + numBase[digit]
                 }
             }
-    
         })
         stringArr.push(numWord)
     })
-    
-    let finalString = stringArr.join(", ")
-    
-    return finalString
-    
-    
 
+    let finalString = stringArr.join(", ")
+    return finalString
 }
+
+
+console.log(numToString(response))
